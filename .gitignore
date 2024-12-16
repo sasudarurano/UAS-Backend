@@ -11,8 +11,9 @@ pubspec.lock
 doc/api/
 
 # dotenv environment variables file
-.env
+!.env
 .env*
+
 
 # Avoid committing generated Javascript files:
 *.js
