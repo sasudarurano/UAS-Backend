@@ -13,4 +13,5 @@ const index = (req, res) => {
 const use = ("/",(req, res)=>{
     res.send("<h1>404 Not Found</h1>");
 });
+
 module.exports = {index,use}

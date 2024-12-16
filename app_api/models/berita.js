@@ -29,8 +29,7 @@ const beritaSchema = new mongoose.Schema({
     },
     // foreign key ke tabel Editor (asumsikan ada model Editor)
     editor: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Editor', // Nama model Editor 
+        type: String,
         required: true
     },
     // field untuk status berita

@@ -7,7 +7,7 @@ const mainController = require('../controllers/mainController');
 //route
 router.get('/', mainController.use);
 
-// router.get('/home', mainController.index);
+router.get('/home', mainController.index);
 
 // router.get('/about', mainController.about);
 
@@ -62,4 +62,5 @@ router.get('/', mainController.use);
 // router.use("/",(req, res)=>{
 //     res.send("<h1>404 not found</h1>");
 // });
+
 module.exports = router;
