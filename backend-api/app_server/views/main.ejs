@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="bg-white shadow-md">
+      <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+        <a class="text-xl font-bold text-gray-800" href="#">Belajar Expres</a>
+        <button class="block lg:hidden text-gray-800 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+        <div class="hidden lg:flex space-x-4">
+          <a class="nav-link text-gray-800 hover:text-gray-600" href="/home">Home</a>
+          <a class="nav-link text-gray-800 hover:text-gray-600" href="/about">About</a>
+          <a class="nav-link text-gray-800 hover:text-gray-600" href="/contact">Contact</a>
+          <a class="nav-link text-gray-800 hover:text-gray-600" href="/fakultas">Fakultas</a>
+          <a class="nav-link text-gray-800 hover:text-gray-600" href="/prodi">Prodi</a>
+        </div>
+      </div>
+    </nav>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === currentPath) {
+            link.classList.add('font-semibold');
+          }
+        });
+      });
+    </script>
+   
+   <%- body %>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
