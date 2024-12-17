@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema({
   },
   role: {
     type: String, // Tipe data role adalah string
-    enum: ["user", "admin","editor"], // Role terbatas hanya bisa 'user' atau 'admin'
+    enum: ["user", "admin"], // Role terbatas hanya bisa 'user' atau 'admin'
     default: "user", // Default role adalah 'user'
   },
   date: {

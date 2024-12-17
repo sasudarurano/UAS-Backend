@@ -27,11 +27,6 @@ const beritaSchema = new mongoose.Schema({
         ref: 'Penulis', // Nama model Penulis
         required: true
     },
-    // foreign key ke tabel Editor (asumsikan ada model Editor)
-    editor: {
-        type: String,
-        required: true
-    },
     // field untuk status berita
     status: {
         type: String,

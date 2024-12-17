@@ -8,7 +8,7 @@ const authmiddleware = require("../middleware/authMiddleware");
 const roleMiddleware = require("../middleware/roleMiddleware");
 
 // Definisi rute untuk penulis
-router.get("/",  penulisController.getAllPenulis);
+router.get("/", penulisController.getAllPenulis);
 
 router.post("/", authmiddleware, roleMiddleware("admin"), penulisController.createPenulis); 
 
