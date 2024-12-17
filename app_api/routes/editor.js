@@ -3,18 +3,18 @@ const router = express.Router();
 const editorController = require("../controllers/editorController");
 
 // Mengimpor middleware untuk autentikasi dan pengecekan peran
-const authMiddleware = require("../middleware/authmiddleware");
+const authmiddleware = require("../middleware/authMiddleware");
 const roleMiddleware = require("../middleware/roleMiddleware");
 
 // Definisi rute untuk editor
-router.get("/", authMiddleware, editorController.getAllEditor);
+router.get("/", authmiddleware, editorController.getAllEditor);
 
-router.post("/", authMiddleware, roleMiddleware("admin"), editorController.createEditor); 
+router.post("/", authmiddleware, roleMiddleware("admin"), editorController.createEditor); 
 
-router.get("/:id", authMiddleware, editorController.getEditorById);
+router.get("/:id", authmiddleware, editorController.getEditorById);
 
-router.put("/:id", authMiddleware, roleMiddleware("admin"), editorController.updateEditor);
+router.put("/:id", authmiddleware, roleMiddleware("admin"), editorController.updateEditor);
 
-router.delete("/:id", authMiddleware, roleMiddleware("admin"), editorController.deleteEditor);
+router.delete("/:id", authmiddleware, roleMiddleware("admin"), editorController.deleteEditor);
 
 module.exports = router;

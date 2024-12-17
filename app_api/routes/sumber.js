@@ -3,18 +3,18 @@ const router = express.Router();
 const sumberController = require("../controllers/sumberController");
 
 // Mengimpor middleware untuk autentikasi dan pengecekan peran
-const authMiddleware = require("../middleware/authmiddleware");
+const authmiddleware = require("../middleware/authMiddleware");
 const roleMiddleware = require("../middleware/roleMiddleware");
 
 // Definisi rute untuk sumber
-router.get("/", authMiddleware, sumberController.getAllSumber);
+router.get("/", authmiddleware, sumberController.getAllSumber);
 
-router.post("/", authMiddleware, roleMiddleware(["editor", "admin"]), sumberController.createSumber); 
+router.post("/", authmiddleware, roleMiddleware(["editor", "admin"]), sumberController.createSumber); 
 
-router.get("/:id", authMiddleware, sumberController.getSumberById);
+router.get("/:id", authmiddleware, sumberController.getSumberById);
 
-router.put("/:id", authMiddleware, roleMiddleware(["editor", "admin"]), sumberController.updateSumber);
+router.put("/:id", authmiddleware, roleMiddleware(["editor", "admin"]), sumberController.updateSumber);
 
-router.delete("/:id", authMiddleware, roleMiddleware(["admin"]), sumberController.deleteSumber); 
+router.delete("/:id", authmiddleware, roleMiddleware(["admin"]), sumberController.deleteSumber); 
 
 module.exports = router;
