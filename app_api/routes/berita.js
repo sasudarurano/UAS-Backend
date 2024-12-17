@@ -4,20 +4,20 @@ const beritaController = require("../controllers/beritaController");
 const upload = require('../middleware/uploadMiddleware'); // Import middleware upload
 
 // Mengimpor middleware untuk autentikasi dan pengecekan peran
-const authMiddleware = require("../middleware/authmiddleware");
+const authmiddleware = require("../middleware/authMiddleware"); 
 const roleMiddleware = require("../middleware/roleMiddleware");
 
 // Definisi rute untuk berita
-router.get("/", authMiddleware, beritaController.getAllBerita);
+router.get("/", authmiddleware, beritaController.getAllBerita);
 
 // Route untuk membuat berita baru dengan upload gambar
-router.post("/", authMiddleware, roleMiddleware( "admin"), upload.single('gambarUtama'), beritaController.createBerita);
+router.post("/", authmiddleware, roleMiddleware( "admin"), upload.single('gambarUtama'), beritaController.createBerita);
 
-router.get("/:id", authMiddleware, beritaController.getBeritaById);
+router.get("/:id", authmiddleware, beritaController.getBeritaById);
 
 // Route untuk update berita, dengan middleware upload untuk menangani gambar baru (jika ada)
-router.put("/:id", authMiddleware, roleMiddleware( "admin"), upload.single('gambarUtama'), beritaController.updateBerita); 
+router.put("/:id", authmiddleware, roleMiddleware( "admin"), upload.single('gambarUtama'), beritaController.updateBerita); 
 
-router.delete("/:id", authMiddleware, roleMiddleware("admin"), beritaController.deleteBerita);
+router.delete("/:id", authmiddleware, roleMiddleware("admin"), beritaController.deleteBerita);
 
 module.exports = router;

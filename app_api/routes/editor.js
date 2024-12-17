@@ -3,7 +3,7 @@ const router = express.Router();
 const editorController = require("../controllers/editorController");
 
 // Mengimpor middleware untuk autentikasi dan pengecekan peran
-const authmiddleware = require("../middleware/authMiddleware");
+const authmiddleware = require("../middleware/authMiddleware"); // Note the capital 'M'
 const roleMiddleware = require("../middleware/roleMiddleware");
 
 // Definisi rute untuk editor
