@@ -11,10 +11,7 @@ const connectDB = require("./app_api/models/db");
 const indexRouter = require('./app_server/routes/index');
 
 
-const fakultasRouterApi = require("./app_api/routes/fakultas");
-const prodiRouterapi = require("./app_api/routes/prodi");
-const authRouterApi = require("./app_api/routes/auth");
-const mahasiswaRouterApi = require("./app_api/routes/mahasiswa");
+
 
 const beritaRouterApi = require("./app_api/routes/berita"); 
 const kategoriRouterApi = require("./app_api/routes/kategori");
@@ -42,10 +39,6 @@ app.use(cors());
 app.use('/', indexRouter);
 
 
-app.use("/api/fakultas", fakultasRouterApi);
-app.use("/api/prodi", prodiRouterapi);
-app.use("/api/auth", authRouterApi);
-app.use("/api/mahasiswa", mahasiswaRouterApi);
 
 app.use("/api/berita", beritaRouterApi);
 app.use("/api/kategori", kategoriRouterApi);
