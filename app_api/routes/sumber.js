@@ -7,11 +7,11 @@ const authmiddleware = require("../middleware/authMiddleware");
 const roleMiddleware = require("../middleware/roleMiddleware");
 
 // Definisi rute untuk sumber
-router.get("/", authmiddleware, sumberController.getAllSumber);
+router.get("/", sumberController.getAllSumber);
 
 router.post("/", authmiddleware, roleMiddleware(["editor", "admin"]), sumberController.createSumber); 
 
-router.get("/:id", authmiddleware, sumberController.getSumberById);
+router.get("/:id", sumberController.getSumberById);
 
 router.put("/:id", authmiddleware, roleMiddleware(["editor", "admin"]), sumberController.updateSumber);
 
