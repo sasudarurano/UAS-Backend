@@ -5,7 +5,6 @@ const getAllBerita = async (req, res) => {
     try {
         const berita = await Berita.find()
             .populate("penulis", "nama")
-            .populate("editor", "nama");
         res.status(200).json(berita);
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -16,7 +15,6 @@ const getBeritaById = async (req, res) => {
     try {
         const berita = await Berita.findById(req.params.id)
             .populate("penulis", "nama")
-            .populate("editor", "nama");
         if (!berita)
             return res.status(404).json({ message: "Berita not found" });
         res.status(200).json(berita);
@@ -47,7 +45,6 @@ const createBerita = async (req, res) => {
         // Populate data relasi setelah berita disimpan
         const beritaWithDetails = await Berita.findById(newBerita._id)
             .populate("penulis", "nama")
-            .populate("editor", "nama")
             .populate("kategori")
             .populate("sumber");
 
@@ -88,7 +85,6 @@ const updateBerita = async (req, res) => {
         // Populate data relasi setelah berita diupdate
         const beritaWithDetails = await Berita.findById(updatedBerita._id)
             .populate("penulis", "nama")
-            .populate("editor", "nama")
             .populate("kategori")
             .populate("sumber");
 
