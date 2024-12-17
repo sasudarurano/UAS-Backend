@@ -9,12 +9,12 @@ const roleMiddleware = require("../middleware/roleMiddleware");
 // Definisi rute untuk sumber
 router.get("/", sumberController.getAllSumber);
 
-router.post("/", authmiddleware, roleMiddleware(["editor", "admin"]), sumberController.createSumber); 
+router.post("/", authmiddleware, roleMiddleware("admin"), sumberController.createSumber); 
 
 router.get("/:id", sumberController.getSumberById);
 
-router.put("/:id", authmiddleware, roleMiddleware(["editor", "admin"]), sumberController.updateSumber);
+router.put("/:id", authmiddleware, roleMiddleware("admin"), sumberController.updateSumber);
 
-router.delete("/:id", authmiddleware, roleMiddleware(["admin"]), sumberController.deleteSumber); 
+router.delete("/:id", authmiddleware, roleMiddleware("admin"), sumberController.deleteSumber); 
 
 module.exports = router;

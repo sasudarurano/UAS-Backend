@@ -15,7 +15,7 @@ const indexRouter = require('./app_server/routes/index');
 
 const beritaRouterApi = require("./app_api/routes/berita"); 
 const kategoriRouterApi = require("./app_api/routes/kategori");
-const editorRouterApi = require("./app_api/routes/editor");
+const editorTagApi = require("./app_api/routes/tag");
 const penulisRouterApi = require("./app_api/routes/penulis");
 const sumberRouterApi = require("./app_api/routes/sumber");
 
@@ -42,7 +42,7 @@ app.use('/', indexRouter);
 
 app.use("/api/berita", beritaRouterApi);
 app.use("/api/kategori", kategoriRouterApi);
-app.use("/api/editor", editorRouterApi);
+app.use("/api/tag", editorTagApi);
 app.use("/api/penulis", penulisRouterApi);
 app.use("/api/sumber", sumberRouterApi);
 
