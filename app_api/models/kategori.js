@@ -28,8 +28,8 @@ const kategoriSchema = new mongoose.Schema({
     // field untuk status kategori
     status: {
         type: String,
-        enum: ['Aktif', 'Tidak Aktif'],
-        default: 'Aktif'
+        enum: ['aktif', 'tidak aktif'],
+        default: 'aktif'
     },
 });
 
