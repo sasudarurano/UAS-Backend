@@ -44,6 +44,12 @@ app.use("/api/sumber", sumberRouterApi);
 
 app.use("/api/auth", authRouterApi);
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:4200"); // Ganti dengan origin frontend kamu
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // connect to mongoDB
 connectDB();
 
