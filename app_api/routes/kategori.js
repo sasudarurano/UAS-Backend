@@ -9,7 +9,7 @@ const authmiddleware = require("../middleware/authMiddleware");
 const roleMiddleware = require("../middleware/roleMiddleware");
 
 // Definisi rute untuk kategori (diganti dari fakultas)
-router.get("/", authmiddleware, roleMiddleware("admin"), kategoriController.getAllKategori); // Ganti controller 
+router.get("/",  kategoriController.getAllKategori); // Ganti controller 
 
 router.post("/", authmiddleware, roleMiddleware("admin"), kategoriController.createKategori); // Ganti controller dan middleware
 
